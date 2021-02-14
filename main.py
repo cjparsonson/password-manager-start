@@ -1,22 +1,45 @@
 from tkinter import *
-
+from tkinter import messagebox
+import string
+import secrets
 
 # ---------------------------- Import Libraries ------------------------------------#
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+letters = list(string.ascii_letters)
+numbers = list(string.digits)
+symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+secretG = secrets.SystemRandom()
+num_letters = secretG.randint(8, 10)
+num_numbers = secretG.randint(2, 4)
+num_symbols = secretG.randint(2, 4)
+
+pword_letters = [secrets.choice(letters) for _ in range(num_letters)]
+pword_numbers = [secrets.choice(numbers) for _ in range(num_numbers)]
+pword_symbols = [secrets.choice(symbols) for _ in range(num_symbols)]
+
+password_list = pword_letters + pword_numbers + pword_symbols
+secretG.shuffle(password_list)
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
-    with open("pass_data.txt", "a") as file:
-        website = entry_website.get()
-        email = entry_email.get()
-        password = entry_password.get()
-        new_entry = f"{website} | {email} | {password}"
-        file.write(new_entry)
-    entry_website.delete(0, "end")
-    entry_password.delete(0, "end")
+    website = entry_website.get()
+    email = entry_email.get()
+    password = entry_password.get()
 
+    is_valid = False if len(website) <= 0 or len(password) <= 0 else True
+    if is_valid:
+        is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered: \nEmail: {email}"
+                                                    f"\nPassword: {password} \n Is it ok to save?")
+        if is_ok:
+            with open("pass_data.txt", "a") as file:
+                new_entry = f"{website} | {email} | {password}\n"
+                file.write(new_entry)
+            entry_website.delete(0, "end")
+            entry_password.delete(0, "end")
+    else:
+        messagebox.showinfo(title="Error", message="Please do not leave fields empty")
 
 # ---------------------------- UI SETUP ------------------------------- #
 # Window setup
