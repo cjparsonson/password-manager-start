@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00eb61bf-d538-4956-bfc8-10a1b7942988" name="Default Changelist" comment="Added password save functionality.&#10;pass_data.txt - for testing">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/password-manager-start.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/password-manager-start.iml" afterDir="false" />
+    <list default="true" id="00eb61bf-d538-4956-bfc8-10a1b7942988" name="Default Changelist" comment="Added password generator and form validation.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pass_data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pass_data.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +75,8 @@
       <workItem from="1611790884411" duration="118000" />
       <workItem from="1611791098920" duration="3198000" />
       <workItem from="1613060219232" duration="335000" />
-      <workItem from="1613317344742" duration="6148000" />
+      <workItem from="1613317344742" duration="6214000" />
+      <workItem from="1613595144736" duration="660000" />
     </task>
     <task id="LOCAL-00001" summary="Added password save functionality.&#10;pass_data.txt - for testing">
       <created>1611796029747</created>
@@ -87,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611796029747</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added password generator and form validation.">
+      <created>1613332745434</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1613332745434</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,9 +112,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added password save functionality.&#10;pass_data.txt - for testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added password save functionality.&#10;pass_data.txt - for testing" />
+    <MESSAGE value="Added password generator and form validation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added password generator and form validation." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/password_manager_start$main.coverage" NAME="main Coverage Results" MODIFIED="1613320025585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/password_manager_start$main.coverage" NAME="main Coverage Results" MODIFIED="1613595689346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -2,26 +2,27 @@ from tkinter import *
 from tkinter import messagebox
 import string
 import secrets
+import pyperclip
 
 # ---------------------------- Import Libraries ------------------------------------#
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
-letters = list(string.ascii_letters)
-numbers = list(string.digits)
-symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
-secretG = secrets.SystemRandom()
-num_letters = secretG.randint(8, 10)
-num_numbers = secretG.randint(2, 4)
-num_symbols = secretG.randint(2, 4)
+def generate_password():
+    letters = list(string.ascii_letters)
+    numbers = list(string.digits)
+    symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+    secretG = secrets.SystemRandom()
 
-pword_letters = [secrets.choice(letters) for _ in range(num_letters)]
-pword_numbers = [secrets.choice(numbers) for _ in range(num_numbers)]
-pword_symbols = [secrets.choice(symbols) for _ in range(num_symbols)]
+    pword_letters = [secrets.choice(letters) for _ in range(secretG.randint(8, 10))]
+    pword_numbers = [secrets.choice(numbers) for _ in range(secretG.randint(2, 4))]
+    pword_symbols = [secrets.choice(symbols) for _ in range(secretG.randint(2, 4))]
 
-password_list = pword_letters + pword_numbers + pword_symbols
-secretG.shuffle(password_list)
-
+    password_list = pword_letters + pword_numbers + pword_symbols
+    secretG.shuffle(password_list)
+    password = "".join(password_list)
+    entry_password.insert(0, password)
+    pyperclip.copy(password)
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
     website = entry_website.get()
@@ -72,7 +73,7 @@ entry_password = Entry(width=25)
 entry_password.grid(row=3, column=1, sticky="E")
 
 # Buttons
-button_generate = Button(text="Generate password", width=15)
+button_generate = Button(text="Generate password", width=15, command=generate_password)
 button_generate.grid(row=3, column=2)
 button_add = Button(text="Add", width=36, command=save)
 button_add.grid(row=4, column=1, columnspan=2, sticky="W")
